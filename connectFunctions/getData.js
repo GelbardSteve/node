@@ -15,7 +15,7 @@ module.exports = (app, mysqlConnection) => {
             // res.send(rows);
           }
 
-          const totalItemsQuery = 'SELECT COUNT(*) AS totalItems FROM Students2;';
+          const totalItemsQuery = 'SELECT COUNT(*) AS totalItems FROM students2;';
 
           mysqlConnection.query(totalItemsQuery, (err, rows, fields) => {
             const totalItems = rows[0].totalItems;
