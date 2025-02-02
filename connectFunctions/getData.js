@@ -7,7 +7,7 @@ module.exports = (app, mysqlConnection) => {
       const startIndex = (currentPag - 1) * pageSize;
 
       mysqlConnection.query(
-        `SELECT * FROM students2 INNER JOIN grades ON
+        `SELECT * FROM stevegel_students.students2 INNER JOIN grades ON
         students2.students_number = grades.students_number LIMIT ${startIndex}, ${pageSize};`,
         (err, allRows, fields) => {
           if (err) {
@@ -30,7 +30,7 @@ module.exports = (app, mysqlConnection) => {
       );
     } else {
       mysqlConnection.query(
-        `SELECT * FROM students2 INNER JOIN grades ON
+        `SELECT * FROM stevegel_students.students2 INNER JOIN grades ON
         students2.students_number = grades.students_number;`,
         (err, allRows, fields) => {
           if (err) {

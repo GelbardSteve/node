@@ -9,7 +9,7 @@ module.exports = (mysqlConnection, emp, app) => {
     await mysqlConnection.query(sql, values, (err, rows, fields) => {
       if (!err) {
         mysqlConnection.query(
-          `SELECT * FROM students2 INNER JOIN grades ON
+          `SELECT * FROM stevegel_students.students2 INNER JOIN grades ON
            students2.students_number = grades.students_number 
            WHERE students2.students_number LIKE '%${emp.students_number}%'`,
           (err, rows2, fields) => {
