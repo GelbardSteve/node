@@ -8,10 +8,10 @@ app.use(cors());
 app.use(express.json());
 
 const mysqlConnection = mysql.createConnection({
-  host: 'sql103.infinityfree.com',
-  user: 'if0_38220865',
-  password: 'Pa44w0rd491990',
-  database: 'if0_38220865_students',
+  host: 'mysql-stevegel.alwaysdata.net',
+  user: 'stevegel',
+  password: 'Pa%%w0rd419990',
+  database: 'stevegel_students',
   multipleStatements: true,
 });
 
@@ -23,7 +23,7 @@ mysqlConnection.connect((err) => {
   }
 });
 
-app.listen(3306, () => console.log('Express server is running at port no: 3000!'));
+app.listen(3000, () => console.log('Express server is running at port no: 3000!'));
 
 getFunc.getData(app, mysqlConnection);
 getFunc.searchStudent(app, mysqlConnection);
