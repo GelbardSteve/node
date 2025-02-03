@@ -24,14 +24,6 @@ mysqlConnection.connect((err) => {
   }
 });
 
-// Serve React Build Files
-app.use(express.static(path.join(__dirname, "build"))); 
-
-// Catch-All Route for React Router
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-
 app.listen(3000, () => console.log('Express server is running at port no: 3000!'));
 
 getFunc.getData(app, mysqlConnection);
