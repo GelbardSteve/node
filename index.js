@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const getFunc = require('./exportsFunctions');
-const PORT = process.env.PORT || 3000;
 
 
 app.use(cors());
@@ -33,7 +32,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.listen(PORT, () => console.log('Express server is running at port no: 3000!'));
+app.listen(3000, () => console.log('Express server is running at port no: 3000!'));
 
 getFunc.getData(app, mysqlConnection);
 getFunc.searchStudent(app, mysqlConnection);
